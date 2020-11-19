@@ -1,0 +1,183 @@
+\documentclass[twocolumn, a4]{article}
+
+% twoside
+
+%\usepackage[pdftex]{color, graphicx, epsfig}
+%\usepackage[final]{pdfpages}
+
+%\usepackage[print]{booklet}
+
+\usepackage{amsmath}
+\usepackage[swedish]{babel}
+\usepackage{blindtext}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{array}
+\usepackage[table]{xcolor}
+\usepackage{subfiles}
+\usepackage{multicol}
+\usepackage[bottom]{footmisc}
+\usepackage{amsfonts}
+\usepackage{pgfplots} 
+\usepackage{longdivision}
+\usepackage{polynom}
+\usepackage[hidelinks]{hyperref}
+\usepackage{biblatex}
+\usepackage{csquotes}
+
+\pgfplotsset{width=8cm, compat=1.9}
+% width=13cm
+\addbibresource{../../sources.bib}
+
+\usepackage{listings}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.96,0.96,0.96}
+
+\definecolor{purple}{rgb}{0.65,0.14,0.64}
+\definecolor{lightBlue}{rgb}{0.25,0.47,0.94}
+\definecolor{uglyBrown}{rgb}{0,1,0}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    keywordstyle=[2]\color{purple},
+    keywordstyle=[3]\color{lightBlue},
+    keywordstyle=[4]\color{uglyBrown},
+    keywords=[2]{
+        for, int, if, static, void, int
+    },
+    keywords=[3]{
+        swap, bubbleSort, insertionSort, Length
+    },
+    keywords=[4]{
+        1, 2, 3, 4, 5, 6, 7, 8, 9, 0
+    },
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    tabsize=1,
+}
+\lstset{style=mystyle}
+
+\begin{document}
+
+\onecolumn
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Erik V. Norberg}
+\lhead{Sorteringsalgoritmer}
+\cfoot{\thepage}
+
+\pagenumbering{arabic}
+
+\lhead{Abstract}
+\section*{Abstract}
+\blindtext
+
+\newpage
+\lhead{Innehållsförteckning}
+\tableofcontents
+
+\twocolumn
+\newpage
+\lhead{Sorteringsalgoritmer}
+
+\section{Inledning}
+
+\subsection{Introduktion}
+Du ska till ett bibliotek och hämta en bok. När du kommer fram till biblioteket börjar du kolla efter den. Men inga av böckerna verkar stå i någon ordning. Då inser du att alla böckerna i biblioteket inte är sorterade. Det är huller om buller. Du frågar då bibliotekarien varför det inte är sorterade. Hon svarar att det tar för lång tid för henne att sortera alla böcker eftersom det har så många, så hon har inte gjort det. Du, med ditt genialiska intellekt, kommer snabbt på att man kan skriva ett dataprogram som sorterar all böckerna snabbare än vad någon människa kan göra. Du utbrister då heureka! Sedan springer du hem och sätter dig framför din dator för att skriva dataprogrammet. Men du inser snabbt att det finns många, många, väldigt många olika sätt att sortera böckerna. Du kommer på ett flertal sätt man kan göra det men du vet inte vilken metod du ska använda. Du ville ju att programmet skulle vara snabbt så du bestämmer dig för att skriva alla metoder du har kommit på för att kunna se vilken som är snabbast. Detta är vad mitt gymnasiearbete kommer att handla om. Vilken metod (eller sorteringsalgoritm som det kallas) är mest effektiv när det kommer till sortering.\\
+Inom datavetenskap är en sorteringsalgoritm en algoritm som sorterar element i en lista till en viss ordning. De mest vanliga ordningarna att sortera till är numerisk ordning eller lexikografisk ordning. Effektiv sortering är viktigt för att optimera effektiviteten av andra algoritmer (till exempel sök- och sammanslagningsalgoritmer) som kräver att dess givna data är i sorterad ordning. Sortering är också ofta användbart för kanonisering av data och för att producera mänsklig läsbar data. Mer formellt måste den sorterade datan från en sorteringsalgoritm uppfylla två villkor:\cite{1, 2}
+\begin{enumerate}
+    \item Den sorterade datan är i icke minskande ordning (varje element är inte mindre än föregående element efter den önskade ordningen);
+    \item Resultatet är en permutation (en omordning som behåller alla original element) av den givna datan.
+\end{enumerate}
+Vidare lagras ingångsdata ofta i en matris, vilket tillåter slumpmässig åtkomst av dess element, snarare än en lista, som endast tillåter sekventiell åtkomst; även om många algoritmer kan tillämpas på vilken typ av data som helst efter lämplig modifiering.\\
+Redan från början av datavetenskapen har sortering attraherat mycket forskning, kanske på grund av att det är ett problem som är lätt att konceptuellt förstå men är väldigt svårt att lösa. Blandet det första personerna som skrev sorteringsalgoritmer är Betty Holberton som skrev ENIAC och UNIVAC. En av det mest kända sorteringsalgoritmerna \textit{“Bubble sort”} skrevs redan så tidigt som 1956. Detta innebär att ämnet redan är väldigt väl undersökt. Så jag kommer inte kunna skriva någon ny sorteringsalgoritm men jag kommer kunna analysera det som redan finns. \cite{1} Mer exakt kommer jag analysera: \textit{Selection sort, Shellsort, Insertion Sort, Merge Sort, Quick Sort, Heap Sort, Bubble Sort, Comb sort} och \textit{Bidirectional Bubble Sort}.
+
+\subsection{Syfte och metod}
+Syftet med arbetet är att analyserna hastigheten av det nio olika algoritmerna som nämndes tidigare. Detta kommer redovisat genom att först visa hur man kan skriva algoritmerna i programmeringsspråket C\#. Det är viktigt att man förstår hur syntaxen i C\# fungerar så det kommer läggas stort fokus på hur syntaxen fungerar och vad den gör. Om man inte förstår programmet är det svårt för en att förstå resten av arbetet då C\# är grunden för resten av gymnasiearbetet. Följt av detta kommer matematiken bakom algoritmernas ordo (\textcolor{red}{se sida ???}) förklaras. Då matematiken bakom algoritmerna är komplex är det inte i fokus då det inte är lika viktigt för arbetets syfte. Detta innebär att det matematiken kommer förklaras men kommer inte gå in på en djupare nivå än vad som är nödvändigt.\\
+Sorteringsalgoritmer i sin helhet öppnar upp många intressanta dörrar inom datavetenskapen. Men det är ett träsk av information och data som är omöjlig att analysera på en och samma gång. För att undvika det träsket kommer jag begränsa arbetet till enbart så kallade \textit{“Comparison sorting algorithms”} och inte \textit{“Non-Comparison sorting algorithms”}\footnote{Exempel på sådana algoritmer är: Pigeonhole sort, Bucket sort, MSD Radix sort, etc.} (eller andra former av sorteringsalgoritmer)\footnote{Exempel på sådana algoritmer är: Bead sort, Simple Pancake sort, Spaghetti sort, etc.}.\\
+Sorteringsalgoritmer handlar inte bara om optimering utan också och om minneshantering inom RAM minnet. Särskilt är vissa sorteringsalgoritmer \textit{på plats}. Det innebär att det bara behöver $\mathcal{O}(1)$ eller $\mathcal{O}(\log{n})$ minne (beteckningen $\mathcal{O}$ förklaras mer \textcolor{red}{på sida ???}) utöver det objekt som sorteras och det behöver inte skapa temporära platser att spara datan i RAM minnet som andra algoritmer behöver göra. \cite{3} Dock så är frågan om minne inte viktigt för arbetet så jag kommer undvika frågan om minne. 
+
+\subsection{Bakgrund}
+För att man ska kunna förstå algoritmerna måste man först förstå ett par fundamentala saker. Ordo, så att man förstå matematiken, C\# syntax, så man förstår programmen, och visa termer som kommer uppstå ett flertal gånger i arbetet.\\\\
+Ordo (\textit{Big O Notation} på engelska och latin för \textit{ordning}) är ett begrepp inom matematiken och även datavetenskapen som används för att ge ett mått på hur beräkningsmässigt tung en funktion är. Detta betecknas med ett versalt $\mathcal{O}$. När en funktion beskrivs med ordo så beskrivs vanligtvist bara en övre gräns för funktionens tillväxthastighet. Associerat med $\mathcal{O}$ är ett par andra notationer som använder symbolerna $o$, $\Omega$, $\omega$ och $\Theta$ som beskriver andra gränser av asymptotisk tillväxthastighet. Dessa kommer vi gå igenom mer i detalj snart. Till exempel betecknar $\mathcal{O}(n^2)$ och $\mathcal{O}(\sqrt{n})$ något som växer lika fort som $n^2$ respektive $\sqrt{n}$ då $n$ ökar. Detta används särskilt inom datavetenskapen när man beskriver hastigheten av olika algoritmer, som sorteringsalgoritmer. \cite{4, 5}\\
+Den formella definitionen lyder: Låt $f$ vara en reell eller komplex funktion och $g$ vara en reell funktion. Låt båda funktionerna vara definierade med någon begränsad delmängd av det positiva reella talen och $g(x)$ vara strikt positivt för stora $x$. Man skriver \cite{6}
+\begin{equation*}
+    f(x)=\mathcal{O}(g(x))\hspace{5mm}\text{när }x\rightarrow\infty
+\end{equation*}
+om absolutbeloppet av $f(x)$ är positiv konstant multiple av $g(x)$ för alla stora värden av $x$. Alltså är $f(x)=\mathcal{O}(g(x))$ om det existerar ett positivt reellt number $M$ och reellt numer $x_0$ så att
+\begin{equation*}
+    |f(x)|\leq Mg(x)\hspace{5mm}\text{för alla }x\leq x_0.
+\end{equation*}
+I många sammanhang lämnas antagandet att vi är intresserade av tillväxthastigheten när variabeln x går mot oändlighet, då skriver man mer enkelt
+\begin{equation*}
+   f(x)=\mathcal{O}(g(x)).
+\end{equation*}
+Ordo kan även användas för att beskriva betendet av $f$ nära ett reelt number $a$ (ofta $a=0$). Man skriver
+\begin{equation*}
+   f(x)=\mathcal{O}(g(x))\hspace{5mm}\text{när }x\rightarrow a
+\end{equation*}
+om det existerar ett positivt nummer $\delta$  och $M$ sådan att för alla $x$ med $0<|x-a|<\delta$
+\begin{equation*}
+   |f(x)|\leq Mg(x).
+\end{equation*}
+Eftersom $g(x)$ är valt att vara noll för värden på $x$ tillräckligt nära $a$, kan båda dessa definitioner förenas med användning av \textit{limit superior}:
+\begin{equation*}
+   f(x)=\mathcal{O}(g(x))\hspace{5mm}\text{när }x\rightarrow a
+\end{equation*}
+om
+\begin{equation*}
+   \limsup_{x\rightarrow a}\frac{|f(x)|}{g(x)}<\infty.
+\end{equation*}
+Det tidigare nämnda relaterade notationerna $o$, $\Omega$, $\omega$ och $\Theta$ kan man lätt förstå i tabellen under då det inte krävs några formella bevis för att förklara dem, eftersom det inte är lika viktiga för arbetet. 
+\begin{table}[h!]
+    \begin{tabular}{|l|l|}
+    \hline
+    \rowcolor[HTML]{A4C2F4} 
+    \multicolumn{1}{|c|}{\cellcolor[HTML]{A4C2F4}{\color[HTML]{000000} Notation}} & \multicolumn{1}{c|}{\cellcolor[HTML]{A4C2F4}{\color[HTML]{000000} I ord}} \\ \hline
+    \rowcolor[HTML]{FFFFFF} 
+    $f(n)\in\mathcal{O}(g(n))$                                                    & $f$ växer högst lika snabbt som $g$                                       \\ \hline
+    \rowcolor[HTML]{F3F3F3} 
+    $f(n)\in\Omega(g(n))$                                                         & $f$ växer minst lika snabbt som $g$                                       \\ \hline
+    \rowcolor[HTML]{FFFFFF} 
+    $f(n)\in\Theta(g(n))$                                                         & $f$ växer lika snabbt som $g$                                             \\ \hline
+    \rowcolor[HTML]{F3F3F3} 
+    $f(n)\in o(g(n))$                                                             & $f$ växer långsammare än $g$                                              \\ \hline
+    \rowcolor[HTML]{FFFFFF} 
+    $f(n)\in\omega(g(n))$                                                         & $f$ växer snabbare än $g$                                                 \\ \hline
+    \end{tabular}
+\end{table}\\
+C\# (C-Sharp) är ett programmeringsspråk utvecklat av Microsoft som körs på .NET Framework. \cite{7} C\# är i första hand ett objektorienterat programspråk. Även kallad ett OOP\footnote{Från engelskans \textit{Object Oriented Programming}}. Det är varför detta arbete skrivs inom C\# då alla sorteringsalgoritmer kan skrivas som var sitt objekt.
+
+\subsubsection{Grundläggande algoritmer (\#1)}
+
+\subsubsection{'Dela och erövra' algoritmer (\#2)}
+
+\subsubsection{'Jämförelse på plats' algoritmer (\#3)}
+
+\subsubsection{Övriga algoritmer (\#4)}
+
+\section{Metod}
+
+\section{Resultat}
+
+\section{Diskussion och slutsatser}
+
+\onecolumn
+\newpage
+\section{Källförteckning}
+\printbibliography
+
+\end{document}
