@@ -1,4 +1,4 @@
-\documentclass[twocolumn, a4]{article}
+\documentclass[twocolumn, a4, twoside]{article}
 
 % twoside
 
@@ -49,14 +49,18 @@
     keywordstyle=[2]\color{purple},
     keywordstyle=[3]\color{lightBlue},
     keywordstyle=[4]\color{uglyBrown},
+    keywordstyle=[5]\color{codegreen},
     keywords=[2]{
-        for, int, if, static, void, int
+        for, int, if, static, public, void, int
     },
     keywords=[3]{
-        swap, bubbleSort, insertionSort, Length
+        swap, bubbleSort, insertionSort, Length, multiplyByTwo
     },
     keywords=[4]{
         1, 2, 3, 4, 5, 6, 7, 8, 9, 0
+    },
+    keywords=[5]{
+        return
     },
     numberstyle=\tiny\color{codegray},
     stringstyle=\color{codepurple},
@@ -111,7 +115,8 @@ Sorteringsalgoritmer i sin helhet öppnar upp många intressanta dörrar inom da
 Sorteringsalgoritmer handlar inte bara om optimering utan också och om minneshantering inom RAM minnet. Särskilt är vissa sorteringsalgoritmer \textit{på plats}. Det innebär att det bara behöver $\mathcal{O}(1)$ eller $\mathcal{O}(\log{n})$ minne (beteckningen $\mathcal{O}$ förklaras mer \textcolor{red}{på sida ???}) utöver det objekt som sorteras och det behöver inte skapa temporära platser att spara datan i RAM minnet som andra algoritmer behöver göra. \cite{3} Dock så är frågan om minne inte viktigt för arbetet så jag kommer undvika frågan om minne. 
 
 \subsection{Bakgrund}
-För att man ska kunna förstå algoritmerna måste man först förstå ett par fundamentala saker. Ordo, så att man förstå matematiken, C\# syntax, så man förstår programmen, och visa termer som kommer uppstå ett flertal gånger i arbetet.\\\\
+För att man ska kunna förstå algoritmerna måste man först förstå ett par fundamentala saker. Ordo, så att man förstå matematiken, C\# syntax, så man förstår programmen, och visa termer som kommer uppstå ett flertal gånger i arbetet.%\\\\
+\subsubsection{Ordo}
 Ordo (\textit{Big O Notation} på engelska och latin för \textit{ordning}) är ett begrepp inom matematiken och även datavetenskapen som används för att ge ett mått på hur beräkningsmässigt tung en funktion är. Detta betecknas med ett versalt $\mathcal{O}$. När en funktion beskrivs med ordo så beskrivs vanligtvist bara en övre gräns för funktionens tillväxthastighet. Associerat med $\mathcal{O}$ är ett par andra notationer som använder symbolerna $o$, $\Omega$, $\omega$ och $\Theta$ som beskriver andra gränser av asymptotisk tillväxthastighet. Dessa kommer vi gå igenom mer i detalj snart. Till exempel betecknar $\mathcal{O}(n^2)$ och $\mathcal{O}(\sqrt{n})$ något som växer lika fort som $n^2$ respektive $\sqrt{n}$ då $n$ ökar. Detta används särskilt inom datavetenskapen när man beskriver hastigheten av olika algoritmer, som sorteringsalgoritmer. \cite{4, 5}\\
 Den formella definitionen lyder: Låt $f$ vara en reell eller komplex funktion och $g$ vara en reell funktion. Låt båda funktionerna vara definierade med någon begränsad delmängd av det positiva reella talen och $g(x)$ vara strikt positivt för stora $x$. Man skriver \cite{6}
 \begin{equation*}
@@ -158,8 +163,42 @@ Det tidigare nämnda relaterade notationerna $o$, $\Omega$, $\omega$ och $\Theta
     \rowcolor[HTML]{FFFFFF} 
     $f(n)\in\omega(g(n))$                                                         & $f$ växer snabbare än $g$                                                 \\ \hline
     \end{tabular}
-\end{table}\\
-C\# (C-Sharp) är ett programmeringsspråk utvecklat av Microsoft som körs på .NET Framework. \cite{7} C\# är i första hand ett objektorienterat programspråk. Även kallad ett OOP\footnote{Från engelskans \textit{Object Oriented Programming}}. Det är varför detta arbete skrivs inom C\# då alla sorteringsalgoritmer kan skrivas som var sitt objekt.
+\end{table}
+\subsubsection{Fundamental C\#}
+C\# (C-Sharp) är ett programmeringsspråk utvecklat av Microsoft som körs på .NET Framework. \cite{7} C\# är i första hand ett objektorienterat programspråk. Även kallad ett OOP\footnote{Från engelskans \textit{Object Oriented Programming}}. Det är varför detta arbete skrivs inom C\# då alla sorteringsalgoritmer kan skrivas som var sitt objekt. Ett objekt är en instans av samlad syntax som används för att utföra en given operation. Exempelvis kan ett objekt kallas på för att göra en viss beräkning eller för att sammanställa data. En objekt i C\# kan se ut såhär:
+\begin{lstlisting}[style=mystyle, numbers=left]
+ public void multiplyByTwo(int n)
+ {
+   return n * 2;
+ }
+\end{lstlisting}
+Denna funktion tar in ett heltal, \lstinline{int n}, och ger tillbaka ett heltal dubbelt så stort som \lstinline{n}, \lstinline{return n * 2}.\\
+En funktion i C\# måste inte bara behandla aritmetik. En funktion kan även behandla arrays (listor) vilket är väldigt användbart när man vill sortera. Exempelvis om vi har listan
+\begin{lstlisting}[style=mystyle, numbers=none]
+ int[] array = {1, 2, 4, 3, 5};
+\end{lstlisting}
+och vi vill byta plats på fyran och femman för att få listan i storleksordning kan vi skriva en funktion som denna:
+\begin{lstlisting}[style=mystyle, numbers=left]
+ static void swap(int x, int y, int[] array)
+ {
+   int temp = array[x];
+   array[x] = array[y];
+   array[y] = temp;
+ }
+\end{lstlisting}
+Den tar in två positioner \lstinline{x} och \lstinline{y} i en given lista \lstinline{array} och byter plats på dom. Den göra detta genom att spara heltalet på position \lstinline{x} i \lstinline{array} inuti en temporär variabel \lstinline{temp}. När \lstinline{x} är sparad i \lstinline{temp} överskrider funktionen \lstinline{x} med \lstinline{y}. Sist överskrider funktionen \lstinline{y} med \lstinline{temp}. Då har det två positionerna byt plats. Vi kallar på funktionen för att byta plats på fyran och trean i \lstinline{lista}:
+\begin{lstlisting}[style=mystyle, numbers=none]
+ swap(3, 4, lista);
+\end{lstlisting}
+och vi får att listan nu är 
+\begin{lstlisting}[style=mystyle, numbers=none]
+ [1, 2, 3, 4, 5]
+\end{lstlisting}
+Denna funktion \lstinline{swap} kommer användas för varje sorteringsalgoritm som arbetet kommer analysera. Alltså varje gång en funktion hänvisar till \lstinline{swap} kommer den köra koden beskriven ovan.
+\begin{equation*}
+    \left\lfloor\frac{\pi}{2}\right\rfloor 
+\end{equation*}
+
 
 \subsubsection{Grundläggande algoritmer (\#1)}
 
