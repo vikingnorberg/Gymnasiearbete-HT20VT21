@@ -1,6 +1,6 @@
-\documentclass[twocolumn, a4, twoside]{article}
+\documentclass[a4]{article}
 
-% twoside
+% twoside twocolumn
 
 %\usepackage[pdftex]{color, graphicx, epsfig}
 %\usepackage[final]{pdfpages}
@@ -93,9 +93,9 @@
 \lhead{Innehållsförteckning}
 \tableofcontents
 
-\twocolumn
+%\twocolumn
 \newpage
-\lhead{Sorteringsalgoritmer}
+\lhead{Introduktion}
 
 \section{Inledning}
 
@@ -115,6 +115,7 @@ Sorteringsalgoritmer i sin helhet öppnar upp många intressanta dörrar inom da
 Sorteringsalgoritmer handlar inte bara om optimering utan också och om minneshantering inom RAM minnet. Särskilt är vissa sorteringsalgoritmer \textit{på plats}. Det innebär att det bara behöver $\mathcal{O}(1)$ eller $\mathcal{O}(\log{n})$ minne (beteckningen $\mathcal{O}$ förklaras mer \textcolor{red}{på sida ???}) utöver det objekt som sorteras och det behöver inte skapa temporära platser att spara datan i RAM minnet som andra algoritmer behöver göra. \cite{3} Dock så är frågan om minne inte viktigt för arbetet så jag kommer undvika frågan om minne. 
 
 \subsection{Bakgrund}
+\lhead{Bakgrund}
 För att man ska kunna förstå algoritmerna måste man först förstå ett par fundamentala saker. Ordo, så att man förstå matematiken, C\# syntax, så man förstår programmen, och visa termer som kommer uppstå ett flertal gånger i arbetet.%\\\\
 \subsubsection{Ordo}
 Ordo (\textit{Big O Notation} på engelska och latin för \textit{ordning}) är ett begrepp inom matematiken och även datavetenskapen som används för att ge ett mått på hur beräkningsmässigt tung en funktion är. Detta betecknas med ett versalt $\mathcal{O}$. När en funktion beskrivs med ordo så beskrivs vanligtvist bara en övre gräns för funktionens tillväxthastighet. Associerat med $\mathcal{O}$ är ett par andra notationer som använder symbolerna $o$, $\Omega$, $\omega$ och $\Theta$ som beskriver andra gränser av asymptotisk tillväxthastighet. Dessa kommer vi gå igenom mer i detalj snart. Till exempel betecknar $\mathcal{O}(n^2)$ och $\mathcal{O}(\sqrt{n})$ något som växer lika fort som $n^2$ respektive $\sqrt{n}$ då $n$ ökar. Detta används särskilt inom datavetenskapen när man beskriver hastigheten av olika algoritmer, som sorteringsalgoritmer. \cite{4, 5}\\
@@ -148,6 +149,7 @@ om
 \end{equation*}
 Det tidigare nämnda relaterade notationerna $o$, $\Omega$, $\omega$ och $\Theta$ kan man lätt förstå i tabellen under då det inte krävs några formella bevis för att förklara dem, eftersom det inte är lika viktiga för arbetet. 
 \begin{table}[h!]
+    \centering
     \begin{tabular}{|l|l|}
     \hline
     \rowcolor[HTML]{A4C2F4} 
@@ -164,6 +166,7 @@ Det tidigare nämnda relaterade notationerna $o$, $\Omega$, $\omega$ och $\Theta
     $f(n)\in\omega(g(n))$                                                         & $f$ växer snabbare än $g$                                                 \\ \hline
     \end{tabular}
 \end{table}
+\newpage
 \subsubsection{Fundamental C\#}
 C\# (C-Sharp) är ett programmeringsspråk utvecklat av Microsoft som körs på .NET Framework. \cite{7} C\# är i första hand ett objektorienterat programspråk. Även kallad ett OOP\footnote{Från engelskans \textit{Object Oriented Programming}}. Det är varför detta arbete skrivs inom C\# då alla sorteringsalgoritmer kan skrivas som var sitt objekt. Ett objekt är en instans av samlad syntax som används för att utföra en given operation. Exempelvis kan ett objekt kallas på för att göra en viss beräkning eller för att sammanställa data. En objekt i C\# kan se ut såhär:
 \begin{lstlisting}[style=mystyle, numbers=left]
@@ -175,7 +178,7 @@ C\# (C-Sharp) är ett programmeringsspråk utvecklat av Microsoft som körs på 
 Denna funktion tar in ett heltal, \lstinline{int n}, och ger tillbaka ett heltal dubbelt så stort som \lstinline{n}, \lstinline{return n * 2}.\\
 En funktion i C\# måste inte bara behandla aritmetik. En funktion kan även behandla arrays (listor) vilket är väldigt användbart när man vill sortera. Exempelvis om vi har listan
 \begin{lstlisting}[style=mystyle, numbers=none]
- int[] array = {1, 2, 4, 3, 5};
+ int[] lista = {1, 2, 4, 3, 5};
 \end{lstlisting}
 och vi vill byta plats på fyran och femman för att få listan i storleksordning kan vi skriva en funktion som denna:
 \begin{lstlisting}[style=mystyle, numbers=left]
@@ -194,13 +197,75 @@ och vi får att listan nu är
 \begin{lstlisting}[style=mystyle, numbers=none]
  [1, 2, 3, 4, 5]
 \end{lstlisting}
-Denna funktion \lstinline{swap} kommer användas för varje sorteringsalgoritm som arbetet kommer analysera. Alltså varje gång en funktion hänvisar till \lstinline{swap} kommer den köra koden beskriven ovan.
-\begin{equation*}
-    \left\lfloor\frac{\pi}{2}\right\rfloor 
-\end{equation*}
-
+Observera att \lstinline{swap} inte har en \lstinline{return}, såsom \lstinline{multiplyByTwo} har på rad $3$. Detta är då för att \lstinline{swap} inte ger tillbaka en ny lista. Den ändrar den givna arrayn utan att skapa en ny array medans \lstinline{multiplyByTwo} tar in ett heltal och ger tillbaka ett nytt heltal. Observera även att när vi kallar på \lstinline{swap} ger vi den $3$ och $4$ då det är positionerna av numrena vi vill byta plats på, inte för att det är $3$ och $4$ vi vill byta plats på. Om vi istället ville byta plats på $1$ och $3$ hade vi skrivit
+\begin{lstlisting}[style=mystyle, numbers=none]
+ swap(1, 4, lista);
+\end{lstlisting}
+Vilket hade gett
+\begin{lstlisting}[style=mystyle, numbers=none]
+ [3, 2, 4, 1, 5]
+\end{lstlisting}
+Funktion \lstinline{swap} kommer användas för varje sorteringsalgoritm som arbetet kommer analysera. Alltså varje gång en sorteringsalgoritm hänvisar till \lstinline{swap} kommer den köra koden som beskrivs ovan.
 
 \subsubsection{Grundläggande algoritmer (\#1)}
+Sorteringsalgoritmer kan vara väldigt komplexa och effektiva medans det är väldigt konceptuellt svåra att förstå. Docks så kan sorteringsalgoritmer vara väldigt simpla men med bekostnad av att vara mindre effektiva. Ett par simpla sorteringsalgoritmer vi kommer kolla på nu är \textit{Bubblesort}, \textit{Bidirectional Bubblesort} och, \textit{Shellsort}. Vi börjar med Bubblesort.\\
+Bubblesort är bland det minst effektiva sorteringsalgoritmerna. Men den är ändå den mest kända sorteringsalgoritm eftersom den är sorteringsalgoritmernas \textit{“Hello World”}. Den är väldigt lätt att förstå både praktiskt och teoretiskt. Därför används den mest som ett pedagogiskt verktyg.\cite{8} Bubblesort fungerar genom att jämföra intilliggande element i en lista. Om elementen som jämförs ligger i fel ordning byter det plats så att det större elementet rör sig uppåt i listan. Denna process fortsätter tills det största elementet i listan är högst upp i listan. När detta är klart börjar algoritmen om men för det näst största elementet i listan. Detta repeteras till listan är sorterad. Låt oss säga att vi har en array 
+\begin{lstlisting}[style=mystyle, numbers=none]
+ int[] lista = {5, 1, 4, 2, 8};
+\end{lstlisting}
+som ska sorteras från minst till störst med Bubblesort. Det kommer bara ta tre iterationer för bubblesort att sortera arrayen (elementen skrivna i fetstil jämförs);\\\\
+\textbf{Första iterationen:}
+\begin{align*}
+    [\textbf{5}, \textbf{1}, 4, 2, 8] &\rightarrow [\textbf{1}, \textbf{5}, 4, 2, 8]\\
+    [1, \textbf{5}, \textbf{4}, 2, 8] &\rightarrow [1, \textbf{4}, \textbf{5}, 2, 8]\\
+    [1, 4, \textbf{5}, \textbf{2}, 8] &\rightarrow [1, 4, \textbf{2}, \textbf{5}, 8]\\
+    [1, 4, 2, \textbf{5}, \textbf{8}] &\rightarrow [1, 4, 2, \textbf{5}, \textbf{8}]
+\end{align*}
+\textbf{Andra iterationen:}
+\begin{align*}
+    [\textbf{1}, \textbf{4}, 2, 5, 8] &\rightarrow [\textbf{1}, \textbf{4}, 2, 5, 8]\\
+    [1, \textbf{4}, \textbf{2}, 5, 8] &\rightarrow [1, \textbf{2}, \textbf{4}, 5, 8]\\
+    [1, 2, \textbf{4}, \textbf{5}, 8] &\rightarrow [1, 2, \textbf{4}, \textbf{5}, 8]\\
+    [1, 2, 4, \textbf{5}, \textbf{8}] &\rightarrow [1, 2, 4, \textbf{5}, \textbf{8}]
+\end{align*}
+Vid detta laget är arrayen redan sorterad men det vet inte algoritmen. Den måste iterera över hela arrayen utan att behöva byta några element för att veta att den är klar.\\\\
+\textbf{Tredje iterationen:}
+\begin{align*}
+    [\textbf{1}, \textbf{2}, 4, 5, 8] &\rightarrow [\textbf{1}, \textbf{2}, 4, 5, 8]\\
+    [1, \textbf{2}, \textbf{4}, 5, 8] &\rightarrow [1, \textbf{2}, \textbf{4}, 5, 8]\\
+    [1, 2, \textbf{4}, \textbf{5}, 8] &\rightarrow [1, 2, \textbf{4}, \textbf{5}, 8]\\
+    [1, 2, 4, \textbf{5}, \textbf{8}] &\rightarrow [1, 2, 4, \textbf{5}, \textbf{8}]
+\end{align*}
+Denna algoritm är lätt att implementera i C\# då den inte kräver många logiska operationer för att utföras:
+\begin{lstlisting}[style=mystyle, numbers=left]
+ static void bubbleSort(int[] array)
+ {
+   items = array.Length;
+   for (int i = 0; i < items; i++)
+   {
+     for (int j = 0; j < items - 1; j++)
+     {
+       if (array[j] > array[i])
+       {
+         swap(i, j, array);
+       }
+     }
+   }
+ }
+\end{lstlisting}
+Nu kan vi kalla på \lstinline{bubbleSort} för att sortera \lstinline{lista}:
+\begin{lstlisting}[style=mystyle, numbers=none]
+ bubbleSort(lista);
+\end{lstlisting}
+Vilket sorterar \lstinline{lista} så att den nu är:
+\begin{lstlisting}[style=mystyle, numbers=none]
+ [1, 2, 4, 5, 8]
+\end{lstlisting} 
+Analysen av  Bubblesort är inte särskilt svår heller. Om vi har en array som är $n$ element lång så kommer Bubblesort behöva jämföra $(n-1)$ element första iteration. Andra iterationen kommer den behöva jämföra $(n-2)$ element. Tredje Iterationen kommer den behöva jämföra $(n-3)$ element och så vidare. Detta innebär att den totala mängden jämförelser  bubblesort kommer behöva göra är
+\begin{equation*}
+    (n-1) + (n-2) + \cdots + 2 + 1 = \sum\frac{n(n-1)}{2}
+\end{equation*}
+Vilket betyder att bubblesort har en tidskomplexitet av $\mathcal{O}(n^2)$.
 
 \subsubsection{'Dela och erövra' algoritmer (\#2)}
 
