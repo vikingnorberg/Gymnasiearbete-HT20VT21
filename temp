@@ -1,0 +1,55 @@
+\begin{scriptsize}
+
+
+
+\begin{center}
+  \begin{tikzpicture}
+    [
+      scale=1,
+      every node/.style = {shape=rectangle, rounded corners, draw, align=center},
+      level 1/.style={sibling distance=24em},
+      level 2/.style={sibling distance=12em},
+      level 3/.style={sibling distance=6em}
+    ]
+  
+    \node{problem}
+    child { node{subproblem} 
+            child { node{subproblem} 
+                    child { node{subproblem} 
+                            child { node{Lösning på\\delproblem} }
+                          }
+                    child { node{subproblem} 
+                            child { node{Lösning på\\delproblem} }
+                          }
+                  }
+            child { node{subproblem} 
+                    child { node{subproblem} 
+                            child { node{Lösning på\\delproblem} }
+                          }
+                    child { node{subproblem} 
+                            child { node{Lösning på\\delproblem} }
+                          }
+                  }
+          }
+    child { node{subproblem} 
+            child { node{subproblem} 
+                    child { node{subproblem} 
+                            child { node{Lösning på\\delproblem} }
+                          }
+                    child { node{subproblem} 
+                            child { node{Lösning på\\delproblem} }
+                          }
+                  }
+            child { node{subproblem} 
+                    child { node{subproblem} 
+                            child { node{Lösning på\\delproblem} }
+                          }
+                    child { node{subproblem} 
+                            child { node{Lösning på\\delproblem} }
+                          }
+                  }
+          };
+  \end{tikzpicture}
+  \end{center}
+
+\end{scriptsize}
