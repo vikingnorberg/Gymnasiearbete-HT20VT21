@@ -1,0 +1,456 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{10}{online}{}
+      \name{author}{1}{}{%
+        {{hash=b9672869bcfcab2407716b43addc25c4}{%
+           family={Brejová},
+           familyi={B\bibinitperiod},
+           given={Bronislava},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{b9672869bcfcab2407716b43addc25c4}
+      \strng{fullhash}{b9672869bcfcab2407716b43addc25c4}
+      \strng{bibnamehash}{b9672869bcfcab2407716b43addc25c4}
+      \strng{authorbibnamehash}{b9672869bcfcab2407716b43addc25c4}
+      \strng{authornamehash}{b9672869bcfcab2407716b43addc25c4}
+      \strng{authorfullhash}{b9672869bcfcab2407716b43addc25c4}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Analyzing variants of Shellsort}
+      \field{urlyear}{2001}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/abs/pii/S0020019000002234?via%3Dihub
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/abs/pii/S0020019000002234?via%3Dihub
+      \endverb
+    \endentry
+    \entry{3}{online}{}
+      \name{author}{1}{}{%
+        {{hash=a02039e66b91b95033a7684ca07a968d}{%
+           family={Cpp.edu},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{a02039e66b91b95033a7684ca07a968d}
+      \strng{fullhash}{a02039e66b91b95033a7684ca07a968d}
+      \strng{bibnamehash}{a02039e66b91b95033a7684ca07a968d}
+      \strng{authorbibnamehash}{a02039e66b91b95033a7684ca07a968d}
+      \strng{authornamehash}{a02039e66b91b95033a7684ca07a968d}
+      \strng{authorfullhash}{a02039e66b91b95033a7684ca07a968d}
+      \field{sortinit}{C}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{CS241: Data Structures and Algorithms II}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://www.cpp.edu/~ftang/courses/CS241/notes/sorting.htm
+      \endverb
+      \verb{url}
+      \verb https://www.cpp.edu/~ftang/courses/CS241/notes/sorting.htm
+      \endverb
+      \warn{\item Entry '3' (../../sources.bib): Invalid format '2020-11-9' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{8}{online}{}
+      \name{author}{1}{}{%
+        {{hash=0dc971740ae193c0551a6ba0312ee3d9}{%
+           family={En.wikipedia.org},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{0dc971740ae193c0551a6ba0312ee3d9}
+      \strng{fullhash}{0dc971740ae193c0551a6ba0312ee3d9}
+      \strng{bibnamehash}{0dc971740ae193c0551a6ba0312ee3d9}
+      \strng{authorbibnamehash}{0dc971740ae193c0551a6ba0312ee3d9}
+      \strng{authornamehash}{0dc971740ae193c0551a6ba0312ee3d9}
+      \strng{authorfullhash}{0dc971740ae193c0551a6ba0312ee3d9}
+      \field{extraname}{1}
+      \field{sortinit}{E}
+      \field{sortinithash}{c554bd1a0b76ea92b9f105fe36d9c7b0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Bubble sort}
+      \field{urlday}{25}
+      \field{urlmonth}{11}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/wiki/Bubble_sort
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/wiki/Bubble_sort
+      \endverb
+    \endentry
+    \entry{9}{online}{}
+      \name{author}{1}{}{%
+        {{hash=0dc971740ae193c0551a6ba0312ee3d9}{%
+           family={En.wikipedia.org},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{0dc971740ae193c0551a6ba0312ee3d9}
+      \strng{fullhash}{0dc971740ae193c0551a6ba0312ee3d9}
+      \strng{bibnamehash}{0dc971740ae193c0551a6ba0312ee3d9}
+      \strng{authorbibnamehash}{0dc971740ae193c0551a6ba0312ee3d9}
+      \strng{authornamehash}{0dc971740ae193c0551a6ba0312ee3d9}
+      \strng{authorfullhash}{0dc971740ae193c0551a6ba0312ee3d9}
+      \field{extraname}{2}
+      \field{sortinit}{E}
+      \field{sortinithash}{c554bd1a0b76ea92b9f105fe36d9c7b0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Comb sort}
+      \field{urlday}{24}
+      \field{urlmonth}{1}
+      \field{urlyear}{2021}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/wiki/Comb_sort
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/wiki/Comb_sort
+      \endverb
+    \endentry
+    \entry{12}{online}{}
+      \name{author}{1}{}{%
+        {{hash=0dc971740ae193c0551a6ba0312ee3d9}{%
+           family={En.wikipedia.org},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{0dc971740ae193c0551a6ba0312ee3d9}
+      \strng{fullhash}{0dc971740ae193c0551a6ba0312ee3d9}
+      \strng{bibnamehash}{0dc971740ae193c0551a6ba0312ee3d9}
+      \strng{authorbibnamehash}{0dc971740ae193c0551a6ba0312ee3d9}
+      \strng{authornamehash}{0dc971740ae193c0551a6ba0312ee3d9}
+      \strng{authorfullhash}{0dc971740ae193c0551a6ba0312ee3d9}
+      \field{extraname}{3}
+      \field{sortinit}{E}
+      \field{sortinithash}{c554bd1a0b76ea92b9f105fe36d9c7b0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Divide-and-conquer algorithm}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm
+      \endverb
+      \warn{\item Entry '12' (../../sources.bib): Invalid format '2021-1-31' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{2}{online}{}
+      \name{author}{1}{}{%
+        {{hash=f1e069787ece74531d112559945c6871}{%
+           family={GeeksforGeeks},
+           familyi={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{f1e069787ece74531d112559945c6871}
+      \strng{fullhash}{f1e069787ece74531d112559945c6871}
+      \strng{bibnamehash}{f1e069787ece74531d112559945c6871}
+      \strng{authorbibnamehash}{f1e069787ece74531d112559945c6871}
+      \strng{authornamehash}{f1e069787ece74531d112559945c6871}
+      \strng{authorfullhash}{f1e069787ece74531d112559945c6871}
+      \field{sortinit}{G}
+      \field{sortinithash}{62eb2aa29549e4fdbd3cb154ec5711cb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Sorting Algorithms}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://www.geeksforgeeks.org/sorting-algorithms/
+      \endverb
+      \verb{url}
+      \verb https://www.geeksforgeeks.org/sorting-algorithms/
+      \endverb
+      \warn{\item Entry '2' (../../sources.bib): Invalid format '2020-11-8' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{5}{online}{}
+      \name{author}{1}{}{%
+        {{hash=0ac8e716da29a03a39cf8b3eb4a0e47b}{%
+           family={Khan},
+           familyi={K\bibinitperiod},
+           given={Sal},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{0ac8e716da29a03a39cf8b3eb4a0e47b}
+      \strng{fullhash}{0ac8e716da29a03a39cf8b3eb4a0e47b}
+      \strng{bibnamehash}{0ac8e716da29a03a39cf8b3eb4a0e47b}
+      \strng{authorbibnamehash}{0ac8e716da29a03a39cf8b3eb4a0e47b}
+      \strng{authornamehash}{0ac8e716da29a03a39cf8b3eb4a0e47b}
+      \strng{authorfullhash}{0ac8e716da29a03a39cf8b3eb4a0e47b}
+      \field{extraname}{1}
+      \field{sortinit}{K}
+      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Big O notation}
+      \field{urlday}{16}
+      \field{urlmonth}{11}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.khanacademy.org/computing/computer-science/algorithms/asymptotic-notation/a/big-o-notation
+      \endverb
+      \verb{url}
+      \verb https://www.khanacademy.org/computing/computer-science/algorithms/asymptotic-notation/a/big-o-notation
+      \endverb
+    \endentry
+    \entry{13}{online}{}
+      \name{author}{1}{}{%
+        {{hash=0ac8e716da29a03a39cf8b3eb4a0e47b}{%
+           family={Khan},
+           familyi={K\bibinitperiod},
+           given={Sal},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{0ac8e716da29a03a39cf8b3eb4a0e47b}
+      \strng{fullhash}{0ac8e716da29a03a39cf8b3eb4a0e47b}
+      \strng{bibnamehash}{0ac8e716da29a03a39cf8b3eb4a0e47b}
+      \strng{authorbibnamehash}{0ac8e716da29a03a39cf8b3eb4a0e47b}
+      \strng{authornamehash}{0ac8e716da29a03a39cf8b3eb4a0e47b}
+      \strng{authorfullhash}{0ac8e716da29a03a39cf8b3eb4a0e47b}
+      \field{extraname}{2}
+      \field{sortinit}{K}
+      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Divide and conquer algorithms}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://www.khanacademy.org/computing/computer-science/algorithms/merge-sort/a/divide-and-conquer-algorithms
+      \endverb
+      \verb{url}
+      \verb https://www.khanacademy.org/computing/computer-science/algorithms/merge-sort/a/divide-and-conquer-algorithms
+      \endverb
+      \warn{\item Entry '13' (../../sources.bib): Invalid format '2021-1-31' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{14}{online}{}
+      \name{author}{1}{}{%
+        {{hash=435c093af6b5a02f26e5605ada41e2d5}{%
+           family={Shustek},
+           familyi={S\bibinitperiod},
+           given={L},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{435c093af6b5a02f26e5605ada41e2d5}
+      \strng{fullhash}{435c093af6b5a02f26e5605ada41e2d5}
+      \strng{bibnamehash}{435c093af6b5a02f26e5605ada41e2d5}
+      \strng{authorbibnamehash}{435c093af6b5a02f26e5605ada41e2d5}
+      \strng{authornamehash}{435c093af6b5a02f26e5605ada41e2d5}
+      \strng{authorfullhash}{435c093af6b5a02f26e5605ada41e2d5}
+      \field{extraname}{1}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Interview: An interview with C.A.R. Hoare}
+      \field{year}{2009}
+      \verb{urlraw}
+      \verb https://dl.acm.org/doi/10.1145/1467247.1467261
+      \endverb
+      \verb{url}
+      \verb https://dl.acm.org/doi/10.1145/1467247.1467261
+      \endverb
+      \warn{\item Entry '14' (../../sources.bib): Invalid format '2021-1-31' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{15}{online}{}
+      \name{author}{1}{}{%
+        {{hash=435c093af6b5a02f26e5605ada41e2d5}{%
+           family={Shustek},
+           familyi={S\bibinitperiod},
+           given={L},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{435c093af6b5a02f26e5605ada41e2d5}
+      \strng{fullhash}{435c093af6b5a02f26e5605ada41e2d5}
+      \strng{bibnamehash}{435c093af6b5a02f26e5605ada41e2d5}
+      \strng{authorbibnamehash}{435c093af6b5a02f26e5605ada41e2d5}
+      \strng{authornamehash}{435c093af6b5a02f26e5605ada41e2d5}
+      \strng{authorfullhash}{435c093af6b5a02f26e5605ada41e2d5}
+      \field{extraname}{2}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Quicksort}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/wiki/Quicksort
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/wiki/Quicksort
+      \endverb
+      \warn{\item Entry '15' (../../sources.bib): Invalid format '2021-1-31' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{7}{online}{}
+      \name{author}{1}{}{%
+        {{hash=ca4cd76e57f2dd462a82cc1fd2cd142d}{%
+           family={W3schools.com},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{ca4cd76e57f2dd462a82cc1fd2cd142d}
+      \strng{fullhash}{ca4cd76e57f2dd462a82cc1fd2cd142d}
+      \strng{bibnamehash}{ca4cd76e57f2dd462a82cc1fd2cd142d}
+      \strng{authorbibnamehash}{ca4cd76e57f2dd462a82cc1fd2cd142d}
+      \strng{authornamehash}{ca4cd76e57f2dd462a82cc1fd2cd142d}
+      \strng{authorfullhash}{ca4cd76e57f2dd462a82cc1fd2cd142d}
+      \field{sortinit}{W}
+      \field{sortinithash}{02432525618c08e2b03cac47c19764af}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{C Tutorial (C Sharp)}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.w3schools.com/cs/
+      \endverb
+      \verb{url}
+      \verb https://www.w3schools.com/cs/
+      \endverb
+    \endentry
+    \entry{6}{online}{}
+      \name{author}{1}{}{%
+        {{hash=08531cde5c6070189a981b00710e826f}{%
+           family={Wikipedia.org},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{08531cde5c6070189a981b00710e826f}
+      \strng{fullhash}{08531cde5c6070189a981b00710e826f}
+      \strng{bibnamehash}{08531cde5c6070189a981b00710e826f}
+      \strng{authorbibnamehash}{08531cde5c6070189a981b00710e826f}
+      \strng{authornamehash}{08531cde5c6070189a981b00710e826f}
+      \strng{authorfullhash}{08531cde5c6070189a981b00710e826f}
+      \field{extraname}{1}
+      \field{sortinit}{W}
+      \field{sortinithash}{02432525618c08e2b03cac47c19764af}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Big O notation}
+      \field{urlday}{16}
+      \field{urlmonth}{11}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/wiki/Big_O_notation
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/wiki/Big_O_notation
+      \endverb
+    \endentry
+    \entry{1}{online}{}
+      \name{author}{1}{}{%
+        {{hash=08531cde5c6070189a981b00710e826f}{%
+           family={Wikipedia.org},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{08531cde5c6070189a981b00710e826f}
+      \strng{fullhash}{08531cde5c6070189a981b00710e826f}
+      \strng{bibnamehash}{08531cde5c6070189a981b00710e826f}
+      \strng{authorbibnamehash}{08531cde5c6070189a981b00710e826f}
+      \strng{authornamehash}{08531cde5c6070189a981b00710e826f}
+      \strng{authorfullhash}{08531cde5c6070189a981b00710e826f}
+      \field{extraname}{2}
+      \field{sortinit}{W}
+      \field{sortinithash}{02432525618c08e2b03cac47c19764af}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Sorting algorithm}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/wiki/Sorting_algorithm
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/wiki/Sorting_algorithm
+      \endverb
+      \warn{\item Entry '1' (../../sources.bib): Invalid format '2020-11-8' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{11}{online}{}
+      \name{author}{1}{}{%
+        {{hash=4adf3a05f3e70af96a0bee0529c3e0aa}{%
+           family={Vitanyi},
+           familyi={V\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{4adf3a05f3e70af96a0bee0529c3e0aa}
+      \strng{fullhash}{4adf3a05f3e70af96a0bee0529c3e0aa}
+      \strng{bibnamehash}{4adf3a05f3e70af96a0bee0529c3e0aa}
+      \strng{authorbibnamehash}{4adf3a05f3e70af96a0bee0529c3e0aa}
+      \strng{authornamehash}{4adf3a05f3e70af96a0bee0529c3e0aa}
+      \strng{authorfullhash}{4adf3a05f3e70af96a0bee0529c3e0aa}
+      \field{sortinit}{V}
+      \field{sortinithash}{02432525618c08e2b03cac47c19764af}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Analysis of Sorting Algorithms by Kolmogorov Complexity (A Survey)}
+      \field{urlyear}{2001}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://hurna.io/assets/files/algorithms/sort/sorting.pdf
+      \endverb
+      \verb{url}
+      \verb https://hurna.io/assets/files/algorithms/sort/sorting.pdf
+      \endverb
+    \endentry
+    \entry{4}{online}{}
+      \name{author}{1}{}{%
+        {{hash=8464bfeffed3dcab8d3f9284600874f8}{%
+           family={yourbasic.org},
+           familyi={y\bibinitperiod}}}%
+      }
+      \strng{namehash}{8464bfeffed3dcab8d3f9284600874f8}
+      \strng{fullhash}{8464bfeffed3dcab8d3f9284600874f8}
+      \strng{bibnamehash}{8464bfeffed3dcab8d3f9284600874f8}
+      \strng{authorbibnamehash}{8464bfeffed3dcab8d3f9284600874f8}
+      \strng{authornamehash}{8464bfeffed3dcab8d3f9284600874f8}
+      \strng{authorfullhash}{8464bfeffed3dcab8d3f9284600874f8}
+      \field{sortinit}{y}
+      \field{sortinithash}{6ae2ff5458ff901249c2745238c951b7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Big O notation: definition and examples}
+      \field{urlday}{16}
+      \field{urlmonth}{11}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://yourbasic.org/algorithms/big-o-notation-explained/
+      \endverb
+      \verb{url}
+      \verb https://yourbasic.org/algorithms/big-o-notation-explained/
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

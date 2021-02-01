@@ -1,0 +1,22 @@
+[0] Config.pm:312> INFO - This is Biber 2.15 (beta)
+[0] Config.pm:315> INFO - Logfile is 'Main.blg'
+[111] biber-MSWIN64:330> INFO - === 
+[131] Biber.pm:415> INFO - Reading 'Main.bcf'
+[251] Biber.pm:952> INFO - Found 15 citekeys in bib section 0
+[272] Biber.pm:4334> INFO - Processing section 0
+[288] Biber.pm:4523> INFO - Looking for bibtex format file '../../sources.bib' for section 0
+[293] bibtex.pm:1682> INFO - LaTeX decoding ...
+[314] bibtex.pm:1494> INFO - Found BibTeX data source '../../sources.bib'
+[337] Utils.pm:395> WARN - Entry '1' (../../sources.bib): Invalid format '2020-11-8' of date field 'urldate' - ignoring
+[340] Utils.pm:395> WARN - Entry '2' (../../sources.bib): Invalid format '2020-11-8' of date field 'urldate' - ignoring
+[344] Utils.pm:395> WARN - Entry '3' (../../sources.bib): Invalid format '2020-11-9' of date field 'urldate' - ignoring
+[371] Utils.pm:395> WARN - Entry '12' (../../sources.bib): Invalid format '2021-1-31' of date field 'urldate' - ignoring
+[374] Utils.pm:395> WARN - Entry '13' (../../sources.bib): Invalid format '2021-1-31' of date field 'urldate' - ignoring
+[377] Utils.pm:395> WARN - Entry '14' (../../sources.bib): Invalid format '2021-1-31' of date field 'urldate' - ignoring
+[380] Utils.pm:395> WARN - Entry '15' (../../sources.bib): Invalid format '2021-1-31' of date field 'urldate' - ignoring
+[415] UCollate.pm:68> INFO - Overriding locale 'sv-SE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[415] UCollate.pm:68> INFO - Overriding locale 'sv-SE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[415] Biber.pm:4162> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'sv-SE'
+[436] bbl.pm:651> INFO - Writing 'Main.bbl' with encoding 'UTF-8'
+[442] bbl.pm:754> INFO - Output to Main.bbl
+[450] Biber.pm:128> INFO - WARNINGS: 7
